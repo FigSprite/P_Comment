@@ -7,7 +7,9 @@ public enum EmBusinessError {
     NO_HANDLER_FOUND(10003,"找不到执行路径操作"),
     PARAMETER_VALIDATION_ERROR(10004,"请求参数校验失败"),
 
-    REGISTER_DUP_FAIL(20001,"该电话号已被注册");
+    REGISTER_DUP_FAIL(20001,"该电话号已被注册"),
+
+    LOGIN_FAIL(30001,"手机号或密码错误");
 
 
     private Integer errCode;

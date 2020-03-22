@@ -1,6 +1,7 @@
 package com.imooc.dianping.dal;
 
 import com.imooc.dianping.model.UserModel;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserModelMapper {
     /**
@@ -50,4 +51,7 @@ public interface UserModelMapper {
      * @mbg.generated Sat Mar 21 17:35:56 CST 2020
      */
     int updateByPrimaryKey(UserModel record);
+
+
+    UserModel selectByTelphoneAndPassword(@Param("telphone")String telphone,@Param("password")String password);
 }
