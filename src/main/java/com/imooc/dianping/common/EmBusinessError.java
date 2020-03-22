@@ -4,9 +4,10 @@ public enum EmBusinessError {
     UNKNOWN_ERROR(00000,"未知错误"),
     NO_OBJECT_FOUND(10001,"请求对象不存在"),
     NO_PARAMETER_FOUND(10002,"请求参数错误"),
-    NO_HANDLER_FOUND(10003,"找不到执行路径操作");
+    NO_HANDLER_FOUND(10003,"找不到执行路径操作"),
+    PARAMETER_VALIDATION_ERROR(10004,"请求参数校验失败"),
 
-
+    REGISTER_DUP_FAIL(20001,"该电话号已被注册");
 
 
     private Integer errCode;
