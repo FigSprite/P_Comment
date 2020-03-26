@@ -9,7 +9,9 @@ public enum EmBusinessError {
 
     REGISTER_DUP_FAIL(20001,"该电话号已被注册"),
 
-    LOGIN_FAIL(30001,"手机号或密码错误");
+    LOGIN_FAIL(30001,"手机号或密码错误"),
+
+    ADMIN_SHOULD_LOGIN(30001,"管理员需要先登入");
 
 
     private Integer errCode;
