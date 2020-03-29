@@ -14,4 +14,6 @@ public interface UserService {
 
     UserModel login(String telphone,String password)
         throws UnsupportedEncodingException, NoSuchAlgorithmException, BusinessException;
+
+    Integer countAllUser();
 }

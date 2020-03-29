@@ -12,6 +12,7 @@ import com.imooc.dianping.common.AdminPermission;
 import com.imooc.dianping.common.BusinessException;
 import com.imooc.dianping.common.CommonRes;
 import com.imooc.dianping.common.EmBusinessError;
+import com.imooc.dianping.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -37,12 +38,20 @@ public class AdminController {
     @Autowired
     private HttpServletRequest httpServletRequest;
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping("/index")
     @AdminPermission
     public ModelAndView index(){
         ModelAndView modelAndView= new ModelAndView("/admin/admin/index");
+        modelAndView.addObject("CONTROLLER_NAME","admin");
+        modelAndView.addObject("ACTION_NAME","index");
+        modelAndView.addObject("userCount",userService.countAllUser());
         return modelAndView;
     }
+
+
 
 
 
@@ -77,7 +86,7 @@ public class AdminController {
             httpServletRequest.getSession().setAttribute(CURRENT_ADMIN_SESSION,email);
             return "redirect:/admin/admin/index";
         }else {
-            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR,"用户名或密码为空");
+            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR,"用户名或密码出错");
         }
     }
 

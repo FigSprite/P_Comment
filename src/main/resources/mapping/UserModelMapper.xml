@@ -163,4 +163,12 @@
   where
     telphone =  #{telphone,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
   </select>
+
+  <select id="countAllUser" resultType="Integer">
+    select
+      COUNT(1)
+    from
+      user
+  </select>
+
 </mapper>
